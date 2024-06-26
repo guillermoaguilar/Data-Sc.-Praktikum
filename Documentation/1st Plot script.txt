@@ -1,0 +1,9 @@
+1-Selecting state_violence , clean_identity , gwf_democracy : 
+	-stored in first_plot_data
+
+2-Plot : 
+	-grouped the dataframe into 4 categories based on "Students" and "Farmers" (to include "Farmers & Students" in both)
+		and gwf_democracy
+	-summarized it by the sum of state_violence (=1) and total
+	-added a column that had the percentage of protests that had state_violence = 1
+	-Plot
