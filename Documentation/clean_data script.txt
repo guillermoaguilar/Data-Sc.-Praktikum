@@ -1,0 +1,22 @@
+1- remove rows that had protest==0 :
+	stored in : no_protest0_df 
+
+2-Adding clean_identity variable :
+	-Type : String
+	-has the following values : "students" , "farmers" , "farmers & students" , "other"
+		-> there were some rows where both were present hence the & variable
+	-classified by checking if the variable protesteridentity contains "student" or "farmer" or both or neither (case unsensitive)
+	-stored in data_with_new_var
+
+3-selecting only the useful columns : 
+	-the variables : year, country, protesterviolence, protesterdemand1, protesterdemand2,
+         protesterdemand3, protesterdemand4, stateresponse1, stateresponse2,
+         stateresponse3, stateresponse4, stateresponse5, stateresponse6,
+         stateresponse7, gwf_democracy, clean_identity
+	-stored in clean_data
+
+4-Adding a variable state_violence : 
+	-Type : boolean
+	-=1 if : stateresponse{1,..7} contains one of the following values : 2,3,6 or 7
+	-=0 else
+	-stored in clean_plus_violence

@@ -4,7 +4,7 @@ install.packages("tidyverse")
 # Load the tidyverse package
 library(tidyverse)
 
-# Assuming your data frame is named df
+
 # Remove rows where protest == 0
 no_protest0_df <- data %>% filter(protest != 0)
 
