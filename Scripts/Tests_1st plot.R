@@ -13,3 +13,4 @@ clean_identity_counts <- clean_plus_violence %>%
 print(clean_identity_counts)
 
 ######################################################################################
+#Check summary_data for correctness of plot code

@@ -14,7 +14,7 @@ first_plot_data <- final_cleaned_df %>%
 print(first_plot_data)
 
 #############################################################################################
-
+#Plot : 
 
 # Load the necessary libraries
 library(tidyverse)
@@ -50,3 +50,4 @@ ggplot(summary_data, aes(x = factor(gwf_democracy), y = percentage, fill = categ
     fill = "Category"
   ) +
   theme_minimal()
+#############################################################################################
