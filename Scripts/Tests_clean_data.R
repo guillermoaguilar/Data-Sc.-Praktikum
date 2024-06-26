@@ -15,7 +15,7 @@ print(farmer_count)
 #Farmer_count test : 
 # Assuming your data frame is named df
 # Count rows where protester_identity contains the word "farmer"
-test_farmer_count <- data_with_new_var %>% dplyr::filter(str_detect(clean_identity, "farmers")) %>% nrow()
+test_farmer_count <- final_cleaned_df %>% dplyr::filter(str_detect(clean_identity, "farmers")) %>% nrow()
 
 # Print the count
 print(test_farmer_count)
@@ -40,7 +40,7 @@ print(student_count)
 #Student_count test : 
 # Assuming your data frame is named df
 # Count rows where protester_identity contains the word "farmer"
-test_student_count <- data_with_new_var %>% dplyr::filter(str_detect(clean_identity, "students")) %>% nrow()
+test_student_count <- final_cleaned_df %>% dplyr::filter(str_detect(clean_identity, "students")) %>% nrow()
 
 # Print the count
 print(test_student_count)

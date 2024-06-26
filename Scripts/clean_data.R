@@ -41,7 +41,6 @@ print(data_with_new_var)
 library(tidyverse)
 library(dplyr)
 
-# Assuming your original data frame is named df
 # Create a new data frame with the specified columns
 clean_data <- data_with_new_var %>%
   select(year, country, protesterviolence, protesterdemand1, protesterdemand2,
@@ -70,6 +69,18 @@ clean_plus_violence <- clean_data %>%
 
 # View the updated data frame
 print(clean_plus_violence)
+
+###############################################################################
+#remove rows that have NA in gwf_democracy : 
+
+
+# Assuming your data frame is named df
+# Remove rows that have NA in the gwf_democracy variable
+final_cleaned_df <- clean_plus_violence %>%
+  filter(!is.na(gwf_democracy))
+
+# View the cleaned data frame
+print(final_cleaned_df)
 
 
 
