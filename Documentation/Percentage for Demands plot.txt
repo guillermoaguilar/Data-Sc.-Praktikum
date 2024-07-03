@@ -1,0 +1,5 @@
+1-Reshape the data from wide to long format
+	-stored in long_df
+2-Count the number of occurrences of each integer in the protesterdemand variables grouped by gwf_democracy
+	-stored in summary_data_plot3
+3-Plot
