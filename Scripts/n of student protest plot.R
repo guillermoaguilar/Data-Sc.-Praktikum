@@ -8,7 +8,7 @@ library(ggplot2)
 
 # Filter and summarize the data
 summary_data_plot2 <- final_cleaned_df %>%
-  filter(clean_identity == "students") %>%
+  filter(clean_identity == "students" |clean_identity=="farmers & students") %>%
   group_by(gwf_democracy) %>%
   summarize(count = n())
 
