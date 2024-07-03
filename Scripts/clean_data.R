@@ -82,6 +82,18 @@ final_cleaned_df <- clean_plus_violence %>%
 # View the cleaned data frame
 print(final_cleaned_df)
 
+#clean Data with only students 
+
+
+
+# Filter the data frame to keep only rows with "students" or "farmers & students" in clean_identity
+final_cleaned_df_students <- final_cleaned_df %>%
+  filter(clean_identity %in% c("students", "farmers & students"))
+
+# View the filtered data frame
+print(final_cleaned_df_students)
+
+
 
 
 
