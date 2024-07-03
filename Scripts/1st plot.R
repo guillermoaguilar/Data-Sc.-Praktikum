@@ -42,7 +42,7 @@ print(summary_data)
 
 # Plot the column chart using ggplot2
 ggplot(summary_data, aes(x = factor(gwf_democracy), y = percentage, fill = category)) +
-  geom_col(position = "dodge") +
+  geom_col(position = "dodge") +geom_text(aes(label = state_violence_count), position = position_dodge(width = 0.9), vjust = -0.5) +
   labs(
     title = "Percentage of State Violence by GWF Democracy and Protester Identity",
     x = "GWF Democracy (Boolean)",
