@@ -48,6 +48,6 @@ ggplot(summary_data, aes(x = factor(gwf_democracy), y = percentage, fill = categ
     x = "GWF Democracy (Boolean)",
     y = "Percentage of State Violence",
     fill = "Category"
-  ) +
+  ) 
   theme_minimal()
 #############################################################################################
