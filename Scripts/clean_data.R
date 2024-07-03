@@ -46,7 +46,7 @@ clean_data <- data_with_new_var %>%
   select(year, country, protesterviolence, protesterdemand1, protesterdemand2,
          protesterdemand3, protesterdemand4, stateresponse1, stateresponse2,
          stateresponse3, stateresponse4, stateresponse5, stateresponse6,
-         stateresponse7, gwf_democracy, clean_identity)
+         stateresponse7, gwf_democracy, clean_identity, participants)
 
 # View the new data frame
 print(clean_data)
