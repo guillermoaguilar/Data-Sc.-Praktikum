@@ -20,3 +20,8 @@
 	-=1 if : stateresponse{1,..7} contains one of the following values : 2,3,6 or 7
 	-=0 else
 	-stored in clean_plus_violence
+5-Removing rows that have gwf_democracy==N/A (years>2010)
+	-stored in final_cleaned_df
+
+4.1-filtering the cleaned data frame to only contain students (and "students & farmers") 
+	-stored in final_cleaned_df_students
