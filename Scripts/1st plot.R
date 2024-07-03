@@ -1,11 +1,9 @@
-
-#Selecting state_violence , clean_identity , gwf_democracy :
-
 # Load the necessary libraries
 library(tidyverse)
 library(dplyr)
+library(ggplot2)
 
-# Assuming your data frame is named clean_plus_violence and already has the state_violence variable
+# Assuming your data frame is named final_cleaned_df
 # Create a new data frame with the specified columns
 first_plot_data <- final_cleaned_df %>%
   select(state_violence, clean_identity, gwf_democracy)
@@ -13,15 +11,6 @@ first_plot_data <- final_cleaned_df %>%
 # View the new data frame
 print(first_plot_data)
 
-#############################################################################################
-#Plot : 
-
-# Load the necessary libraries
-library(tidyverse)
-library(dplyr)
-library(ggplot2)
-
-# Assuming your data frame is named clean_data
 # Group and summarize the data
 summary_data <- first_plot_data %>%
   mutate(category = case_when(
@@ -33,21 +22,26 @@ summary_data <- first_plot_data %>%
   group_by(gwf_democracy, category) %>%
   summarize(
     total = n(),
-    state_violence_count = sum(state_violence == 1)
+    state_violence_count = sum(state_violence == 1),
+    .groups = 'drop'
   ) %>%
-  mutate(percentage = (state_violence_count / total) * 100)
+  mutate(
+    percentage = (state_violence_count / total) * 100,
+    gwf_democracy = recode(gwf_democracy, `0` = "non-democratic", `1` = "democratic")
+  )
 
 # View the summarized data
 print(summary_data)
 
 # Plot the column chart using ggplot2
-ggplot(summary_data, aes(x = factor(gwf_democracy), y = percentage, fill = category)) +
-  geom_col(position = "dodge") +geom_text(aes(label = state_violence_count), position = position_dodge(width = 0.9), vjust = -0.5) +
+ggplot(summary_data, aes(x = gwf_democracy, y = percentage, fill = category)) +
+  geom_col(position = "dodge") +
+  geom_text(aes(label = state_violence_count), position = position_dodge(width = 0.9), vjust = -0.5) +
   labs(
-    title = "Percentage of State Violence by GWF Democracy and Protester Identity",
-    x = "GWF Democracy (Boolean)",
-    y = "Percentage of State Violence",
+    title = "Percentage of protests that encountered State Violence by Democracy and Protester Identity",
+    x = "Democracy",
+    y = "Percentage of protests that encountered State Violence",
     fill = "Category"
-  ) 
+  ) +
   theme_minimal()
-#############################################################################################
+
