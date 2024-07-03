@@ -1,0 +1,3 @@
+1-filtered data frame to only contain students protests and grouped it by gwf_democracy
+	-stored in summary_data_plot2
+2-Plot 
