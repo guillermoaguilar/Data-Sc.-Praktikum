@@ -15,7 +15,7 @@ print(summary_data_plot2)
 
 # Plot the results using ggplot2
 ggplot(summary_data_plot2, aes(x = gwf_democracy, y = count, fill = gwf_democracy)) +
-  geom_col() +
+  geom_col() + geom_text(aes(label = count), vjust = -0.5, position = position_dodge(width = 0.9)) +
   labs(
     title = "Number of Student Protests",
     x = "Democracy",
