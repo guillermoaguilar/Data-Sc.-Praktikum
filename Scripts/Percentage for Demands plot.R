@@ -1,7 +1,6 @@
 # Load the necessary libraries
 library(tidyverse)
 
-# Assuming your data frame is named final_cleaned_df_students
 # Reshape the data from wide to long format
 long_df <- final_cleaned_df_students %>%
   pivot_longer(cols = starts_with("protesterdemand"),
@@ -14,13 +13,13 @@ long_df <- long_df %>%
   mutate(gwf_democracy = recode(gwf_democracy, `0` = "non-democratic", `1` = "democratic"))
 
 # Create a named vector for mapping integer values to demand names
-demand_labels <- c("1" = "Labor | Wage",
-                   "2" = "Land",
-                   "3" = "Police",
-                   "4" = "Politic behaviour",
-                   "5" = "Price/Tax",
-                   "6" = "Politician",
-                   "7" = "Social")
+demand_labels <- c("1" = "Labor or wage dispute",
+                   "2" = "Land tenure or farm issues",
+                   "3" = "Police brutality or arbitrary actions",
+                   "4" = "Political behavior / processes",
+                   "5" = "Price increases or tax policy",
+                   "6" = "Removal of corrupt or reviled political person",
+                   "7" = "Social restrictions")
 
 # Convert demand_value to a factor with levels in the desired order
 long_df <- long_df %>%
@@ -41,10 +40,11 @@ print(summary_data)
 ggplot(summary_data, aes(x = demand_value, y = percentage, fill = gwf_democracy)) +
   geom_col(position = "dodge") +
   labs(
-    title = "Percentage students protests for Each protester demand",
+    title = "Percentage students protests for each protester demand",
     x = "Demand",
     y = "Percentage of protests",
     fill = "Democracy"
   ) +
-  theme_minimal()
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
