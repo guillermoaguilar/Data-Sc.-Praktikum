@@ -27,12 +27,21 @@ Removed rows where gwf_democracy == NA (years > 2010)
 
 Data Questions:
 How many student-led protests took place in democratic and non-democratic countries between 1990 and 2010?
-![alt text](https://github.com/[ZiedMarr]/[Data-Sc.-Praktikum]/blob/[Plots]/Number of students protests.png?raw=true)
+![alt text](https://github.com/ZiedMarr/Data-Sc.-Praktikum/blob/main/Plots/Number%20of%20students%20protests.png)
+
+What is the percentage of protests with student participation that caused a violent state response in democratic and non-democratic countries between 1990 and 2010? (With farmers as a control group)
+![alt text](https://github.com/ZiedMarr/Data-Sc.-Praktikum/blob/main/Plots/Students-Farmers%2Bnumber.png)
+
+What is the percentage of protests with student participation that caused a violent state response in democratic and non-democratic countries between 1990 and 2010? (With medical workers as a control group)
+![alt text](https://github.com/ZiedMarr/Data-Sc.-Praktikum/blob/main/Plots/violence-students-meds.png
+)
+
+What is the percentage of student protests for each protester demand in democratic and non-democratic countries?
+![alt text](https://github.com/ZiedMarr/Data-Sc.-Praktikum/blob/main/Plots/demands.png)
 
 
 
-
-
+Usage:
 1/ Import the data ( /data/data.csv ) to the workspace.
 2/ Cleaning the data : run the clean_data script 
 3/ Plotting the number of students protests in democratic and non-democratic countries : run the n of student protest plot script 
