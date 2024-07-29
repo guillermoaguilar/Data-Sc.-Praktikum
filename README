@@ -27,6 +27,7 @@ Removed rows where gwf_democracy == NA (years > 2010)
 
 Data Questions:
 How many student-led protests took place in democratic and non-democratic countries between 1990 and 2010?
+![alt text](https://github.com/[ZiedMarr]/[Data-Sc.-Praktikum]/blob/[Plots]/Number of students protests.png?raw=true)
 
 
 
